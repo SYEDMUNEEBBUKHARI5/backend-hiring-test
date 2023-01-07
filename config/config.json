@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "9fbWklpcbq6X5MLNLPYvtDfYUV6lM23T",
+    "database": "ticketsystem",
+    "host": "dpg-cestm182i3mh51vn59fg-a",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "root",
+    "password": "9fbWklpcbq6X5MLNLPYvtDfYUV6lM23T",
+    "database": "ticketsystem",
+    "host": "dpg-cestm182i3mh51vn59fg-a",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "root",
+    "password": "9fbWklpcbq6X5MLNLPYvtDfYUV6lM23T",
+    "database": "ticketsystem",
+    "host": "dpg-cestm182i3mh51vn59fg-a",
+    "dialect": "postgres"
+  }
+}
