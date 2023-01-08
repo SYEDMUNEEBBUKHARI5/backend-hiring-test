@@ -1,14 +1,15 @@
-/* eslint-disable no-unused-vars */
-const { Sequelize, Model } = require('sequelize')
-module.exports = (sequelize, DataTypes) => {
-  class Call extends Model {
-    static associate(models) {
-      // define association here
-    }
-  }
+'use strict'
 
-  Call.init(
-    {
+/** @type {import('sequelize-cli').Migration} */
+module.exports = {
+  async up(queryInterface, Sequelize) {
+    /**
+     * Add altering commands here.
+     *
+     * Example:
+     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
+     */
+    return queryInterface.createTable('CallLogs', {
       // table definition
       id: {
         type: Sequelize.INTEGER,
@@ -49,22 +50,25 @@ module.exports = (sequelize, DataTypes) => {
       },
       createdAt: {
         type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+        defaultValue: Sequelize.NOW,
       },
       updatedAt: {
         type: Sequelize.DATE,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+        defaultValue: Sequelize.NOW,
       },
       deletedAt: {
         type: Sequelize.DATE,
       },
-    },
-    {
-      // timestamps: false,
-      modelName: 'Call',
-      sequelize,
-    }
-  )
+    })
+  },
 
-  return Call
+  async down(queryInterface, Sequelize) {
+    /**
+     * Add reverting commands here.
+     *
+     * Example:
+     * await queryInterface.dropTable('users');
+     */
+    return queryInterface.dropTable('CallLogs')
+  },
 }

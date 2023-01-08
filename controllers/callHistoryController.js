@@ -2,8 +2,12 @@
 const db = require('../models')
 
 const callHistoryController = async () => {
-  const data = await db.Call.findAll()
-  return data
+  try {
+    const data = await db.CallLogs.findAll()
+    return data
+  } catch (err) {
+    console.log(err)
+  }
 }
 
 module.exports = {

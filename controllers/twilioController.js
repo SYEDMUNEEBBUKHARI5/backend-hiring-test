@@ -27,7 +27,7 @@ const selectOptions = async (digit, changeBodyCallStatus, gather, twiml) => {
 }
 
 const insertData = async (data) => {
-  await db.Call.create(data)
+  await db.CallLogs.create(data)
   return true
 }
 module.exports = {
